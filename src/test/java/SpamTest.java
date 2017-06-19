@@ -12,8 +12,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.michol.spark.DetectorEngine;
 import com.michol.spark.classifier.DetectorFactory;
+import com.michol.spark.spam.detector.DetectorEngine;
 
 public class SpamTest {
 

@@ -1,4 +1,4 @@
-package com.michol.spark;
+package com.michol.spark.spam.detector;
 
 import java.util.Arrays;
 
