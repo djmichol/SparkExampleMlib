@@ -40,7 +40,7 @@ public class BagOfWord {
 
 	public static void main(String[] args) throws Exception {
 
-		SparkConf conf = new SparkConf().setAppName("SortedWordCountSolution").setMaster("local[3]");
+		SparkConf conf = new SparkConf().setAppName("BagOfWords").setMaster("local[3]");
 		sc = new JavaSparkContext(conf);
 		BagOfWord bow = new BagOfWord();
 		bow.runBow("src/main/resources");
@@ -87,9 +87,10 @@ public class BagOfWord {
 		// sort by word
 		JavaRDD<BOWElement> bowElementsSorted = bowElements.sortBy(bowElem -> bowElem.getWord(), true, 1);
 		// print all elements
-		for (BOWElement bowElement : bowElementsSorted.collect()) {
+		bowElementsSorted.saveAsTextFile("files/result");
+		/*for (BOWElement bowElement : bowElementsSorted.collect()) {
 			System.out.println(bowElement);
-		}
+		}*/
 
 	}
 }

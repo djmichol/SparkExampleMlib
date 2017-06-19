@@ -11,7 +11,7 @@ import com.michol.spark.classifier.DetectorFactory;
 public class SpamDetector {
 
 	public static void main(String[] args) throws Exception {
-		SparkConf sparkConf = new SparkConf().setAppName("org.sparkexample.WordCount").setMaster("local[4]");
+		SparkConf sparkConf = new SparkConf().setAppName("SpamDetector").setMaster("local[4]");
 		JavaSparkContext sc = new JavaSparkContext(sparkConf);
 		runDetector(sc);
 	}
